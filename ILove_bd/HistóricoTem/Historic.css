@@ -275,8 +275,8 @@ footer img:hover {
     flex-direction: column;
     gap: 15px;
     text-align: center;
-    position: static;
-    margin-bottom: 20px;
+    position: sticky;
+    margin-top 20px;
   }
 
   footer p.rodape {
