@@ -278,6 +278,8 @@ footer img:hover {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+    position: static;
+    margin-top: auto;
   }
 
   footer p.rodape {
