@@ -116,11 +116,11 @@ nav img {
   box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.3);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 #searchinput:focus {
   border-color: #6c63ff;
   box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.3);
-  background-color: #8053a0;
-  color: #000000;
+  background-color: #fdfdfd;
   transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -149,6 +149,8 @@ main {
   background-color: var(--Color_ImageContent);
   padding: 20px;
   border-radius: 35%;
+  border-top: solid 4px #ffc107;
+  border-bottom: solid 4px #ffc107;
 }
 
 .container span {
@@ -251,7 +253,7 @@ footer img:hover {
   .container img {
     width: 70px;
     height: 70px;
-    padding: 5px;
+    padding: 10px;
     flex-shrink: 1;
   }
 
@@ -271,12 +273,11 @@ footer img:hover {
     margin: 10px;
     padding: 5px;
   }
+
   footer {
     flex-direction: column;
     gap: 15px;
     text-align: center;
-    position: sticky;
-    margin-top 20px;
   }
 
   footer p.rodape {
