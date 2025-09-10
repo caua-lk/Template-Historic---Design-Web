@@ -8,6 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Tema escuro */
 @media (prefers-color-scheme: dark) {
   :root {
     --Color_Nav: #214D95;
@@ -25,9 +26,9 @@ html {
 
     --text_color: #f4f4f4;
   }
-
 }
 
+/* Tema claro */
 @media (prefers-color-scheme: light) {
   :root {
     --Color_Nav: #5295FF;
@@ -37,14 +38,11 @@ html {
 
     --Color_ScrollTrack: #74a3ff;
     --Color_ScrollThumb: #3535d3;
-    ;
     --Color_ScrollThumbhover: #1919a7;
-    ;
 
     --Color_HisContent: #5587D2;
-    --Color_ImageContent: rgb(85, 135, 210, 0.82);
+    --Color_ImageContent: rgba(85, 135, 210, 0.82);
     --Color_Content: #4E5DBC;
-
 
     --text_color: #000000;
   }
@@ -63,7 +61,6 @@ html {
   border-radius: 24px;
   border: 3px solid var(--Color_ScrollTrack);
   background-clip: content-box;
-
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -78,7 +75,6 @@ body {
 }
 
 nav {
-  display: inline-block;
   width: 100%;
   background-color: var(--Color_Nav);
   margin-top: -45px;
@@ -93,8 +89,8 @@ nav img {
   display: flex;
   justify-content: center;
   width: 100%;
-  border-top: solid 1px #824fda;
-  border-bottom: solid 1px #824fda;
+  border-top: 1px solid #824fda;
+  border-bottom: 1px solid #824fda;
   background-color: var(--Color-Pranc);
   margin-top: -40px;
 }
@@ -121,17 +117,17 @@ nav img {
   border-color: #6c63ff;
   box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.3);
   background-color: #b350d4;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
   color: #000000;
+  outline: 2px solid #ffc107;
+  transition: all 0.3s ease;
 }
 
 main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 10px;
+  padding: 10px 10px 100px;
   margin: 20px;
-  padding-bottom: 100px
 }
 
 .container {
@@ -139,19 +135,28 @@ main {
   align-items: center;
   padding: 10px;
   background-color: var(--Color_HisContent);
-  border-radius: 4px;
-  min-height: 100px;
-  height: auto;
   border-radius: 8px;
+  min-height: 100px;
 }
 
-.container img {
+.circle {
   width: 100px;
-  background-color: var(--Color_ImageContent);
-  padding: 20px;
-  border-radius: 35%;
-  border-top: solid 4px #ffc107;
-  border-bottom: solid 4px #ffc107;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: var(--Color_Content);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  border: 4px solid #ffc107;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .container span {
@@ -162,7 +167,6 @@ main {
 }
 
 .Doc-title {
-  flex-grow: 1;
   font-size: 26px;
   font-weight: bold;
   color: var(--text_color);
@@ -173,24 +177,10 @@ main {
   border-radius: 4px;
 }
 
-.circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--Color_Content);
-  border-radius: 18px;
-  flex-shrink: 0;
-  margin-right: 15px;
-  padding: 5px;
-  border-left: 4px solid #ffc107;
-  border-right: 4px solid #ffc107;
-}
-
 .Change_Time,
 .Create_Date {
-  flex-grow: 0;
-  color: var(--text_color);
   font-size: 16px;
+  color: var(--text_color);
   opacity: 0.85;
   background-color: var(--Color_Content);
   border-right: 6px solid #ffc107;
@@ -228,34 +218,31 @@ footer img {
   height: 65px;
   width: 65px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.07s;
 }
 
 footer img:hover {
   transform: scale(1.10);
-  transition: all 0.07s;
 }
 
 @media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 10px;
+    padding: 5px;
+  }
+
   .container {
     flex-direction: row;
     align-items: center;
-    min-height: auto;
     flex-wrap: nowrap;
   }
 
   .circle {
-    width: 90px;
-    height: 90px;
-    margin-right: 12px;
-    padding: 4px;
-    flex-shrink: 0;
-  }
-
-  .container img {
     width: 70px;
     height: 70px;
-    padding: 10px;
-    flex-shrink: 1;
+    margin-right: 12px;
   }
 
   .Doc-title {
@@ -266,13 +253,6 @@ footer img:hover {
   .Change_Time,
   .Create_Date {
     font-size: 13px;
-  }
-
-  main {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin: 10px;
-    padding: 5px;
   }
 
   footer {
